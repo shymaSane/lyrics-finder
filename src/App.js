@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './component/ui/Header';
-import {Provider} from './context'
+import {Provider} from './context';
+import Songs from './component/lyrics/Songs'
 
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <Songs />
       </div>
     );
   }
