@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
-import Song from './Song'
+import Song from './Song';
+import {Consumer} from '../../context'
 
 class Songs extends Component {
   render() {
     return (
-      <div>
-        <Song />
-        <Song />
-        <Song />
-        <Song />
-      </div>
+      <Consumer>
+        {
+          value => {
+            const {lyrics} = value;
+            return (
+
+              <div>{console.log(lyrics)}</div>
+     
+            )
+          }
+        }
+      </Consumer>
+      
     )
   }
 }

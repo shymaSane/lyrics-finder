@@ -7,10 +7,12 @@ import Songs from './component/lyrics/Songs'
 class App extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <Songs />
-      </div>
+      <Provider>
+        <div>
+          <Header />
+          <Songs />
+        </div>
+      </Provider>
     );
   }
 }
