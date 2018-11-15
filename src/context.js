@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const Context = react.createContext({})
+const Context = React.createContext({})
 
 export class Provider extends Component {
     state = [{}]
