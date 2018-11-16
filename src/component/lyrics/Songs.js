@@ -8,10 +8,10 @@ class Songs extends Component {
       <Consumer>
         {
           value => {
-            const {lyrics} = value;
+            console.log(value);
             return (
 
-              <div>{console.log(lyrics)}</div>
+              <div></div>
      
             )
           }
