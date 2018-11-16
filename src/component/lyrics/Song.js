@@ -7,7 +7,7 @@ class Song extends Component {
     const {track} = this.props
     return (
       <div>
-        <SongUi />
+        <SongUi artist={track.artist_name} song={track.track_name} album={track.album_name}/>
       </div>
     )
   }
