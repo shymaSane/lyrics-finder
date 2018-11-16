@@ -8,11 +8,13 @@ export class Provider extends Component {
         tracks: []
     }
 
-    componentDidMount () {
-            axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=love&page_size=10&apikey=${process.env.REACT_APP_MUISXMATCH_KEY}`)
-            .then(res => this.setState({
-            tracks: res.data
-            }))
+    async componentDidMount () {
+            const res = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=love&page_size=10&apikey=${process.env.REACT_APP_MUISXMATCH_KEY}`);
+            const data = await res.data;
+            const body = await data.message.body.track_list;
+            this.setState({
+                tracks: body
+            })
     }
 
     render (){
