@@ -8,11 +8,14 @@ class Songs extends Component {
       <Consumer>
         {
           value => {
-            console.log(value);
+            const {tracks} = value
             return (
-
-              <div></div>
-     
+              <div>
+                {tracks.map(track => <Song
+                  key={track.track.track_id}
+                  track={track.track}
+                />)}
+              </div>
             )
           }
         }

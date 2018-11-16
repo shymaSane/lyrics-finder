@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
-import SongUi from '../ui/SongUi'
+import React, { Component } from 'react';
+import SongUi from '../ui/SongUi';
+import PropTypes from 'prop-types';
 
-export default class Song extends Component {
-  render() {
+class Song extends Component {
+  render(props) {
+    const {track} = this.props
     return (
       <div>
         <SongUi />
@@ -10,3 +12,8 @@ export default class Song extends Component {
     )
   }
 }
+
+Song.propTypes ={
+  track: PropTypes.object.isRequired 
+}
+export default Song;
