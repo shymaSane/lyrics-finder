@@ -1,33 +1,19 @@
 import React, { Component } from 'react';
 import Header from './component/ui/Header';
 import {Provider} from './context';
-import Songs from './component/lyrics/Songs'
+import Songs from './component/lyrics/Songs';
+import SearchSong from './component/search/SearchSong';
 
 
 
 class App extends Component {
-  state ={
-    appClass: null
-  }
-
-  componentDidMount(){
-    this.setState({
-      appClass: 'col-md-6 col-sm-12'
-    })
-  }
-
-  render() {
+   render() {
     return (
       <Provider>
         <div>
           <Header />
-          <div className="container">
-            <div className="row show_cards">
-              <div className={this.state.appClass}>
-                <Songs />
-              </div>
-            </div>
-          </div>
+          <SearchSong />
+          <Songs />
         </div>
       </Provider>
     );

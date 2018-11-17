@@ -3,9 +3,25 @@ import axios from 'axios';
 
 const Context = React.createContext({})
 
+const reducer = (state, action) => {
+    switch(action.type){
+        case 'SEARCHED_SONG':
+            return{
+                ...state,
+                tracks: async () =>{
+                    const res = await axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=love&page_size=10&apikey=${process.env.REACT_APP_MUISXMATCH_KEY}`);
+                    const data = await res.data;
+                    const body = await data.message.body.track_list;
+                    return body
+                }
+            }
+    }
+}
+
 export class Provider extends Component {
     state = {
-        tracks: []
+        tracks: [],
+        dispatch: action => this.setState(state => reducer(state, action))
     }
 
     async componentDidMount () {

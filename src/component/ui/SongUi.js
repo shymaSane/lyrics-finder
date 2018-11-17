@@ -8,7 +8,7 @@ export default function SongUi({artist, song, album}) {
         <div className="card-body">
             <h6 className = "card-title">Track: {song}</h6>
             <h6 className = "card-title">Album: {album}</h6>
-            <a href="#" className="btn btn-danger">View Lyrics</a>
+            <a href="/" className="btn btn-danger">View Lyrics</a>
         </div>
     </div>
   )
