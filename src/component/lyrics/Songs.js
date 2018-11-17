@@ -9,6 +9,7 @@ class Songs extends Component {
         {
           value => {
             const {tracks} = value
+            console.log(tracks)
             return (
               <div>
                 {tracks.map(track => <Song
