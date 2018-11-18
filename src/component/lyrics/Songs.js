@@ -17,6 +17,7 @@ class Songs extends Component {
                 <div>
                   {tracks.map(track => <Song
                     key={track.track.track_id}
+                    id={track.track.track_id}
                     track={track.track}
                   />)}
                 </div>

@@ -17,7 +17,7 @@ class App extends Component {
             <Header />
             <Switch>
               <Route exact path='/' component={Songs}/>
-              <Route exact path='/lyrics' component={Lyrics}/>
+              <Route exact path='/lyrics/:id' component={Lyrics}/>
             </Switch>
           </div>
         </Router>
